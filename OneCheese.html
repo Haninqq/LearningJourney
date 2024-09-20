@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onri's OneCheese Planet Story</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        .popup-container {
+            width: 80%;
+            max-width: 800px;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .popup-container img {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+
+        .story-text {
+            display: none;
+            margin-top: 20px;
+            text-align: left;
+            font-size: 18px;
+            line-height: 1.5;
+            white-space: pre-wrap;
+        }
+
+        .show-text-button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        .show-text-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="popup-container">
+    <img src="https://i.postimg.cc/YqNtKvbq/DALL-E-2024-09-20-10-10-25-A-cute-rabbit-astronaut-named-Onri-who-is-also-a-baker-exploring-th.webp">
+    <button class="show-text-button" id="show-text-button" onclick="showStory()">스토리 보기</button>
+    <div class="story-text" id="story-text">
+        원 치즈 행성에 도착한 온리는 실망했습니다. 치즈는 지구에도 있는걸! 그렇지만 처음 보는 빛깔에 온리는 홀린듯이 원 치즈 뭉치에 다가갔어요. 어쩌면 원 치즈는 특별할지도 몰라. 온리원 쿠키를 완성시킬 원 치즈를 들고 온리는 새로운 행성을 향해 또다시 탐험을 떠납니다.
+    </div>
+</div>
+
+<script>
+    function showStory() {
+        const storyText = document.getElementById('story-text');
+        const text = storyText.innerText;
+        const button = document.getElementById('show-text-button');
+        storyText.innerText = '';
+        storyText.style.display = 'block';
+        button.style.display = 'none'; // 버튼 숨기기
+        
+        let i = 0;
+        const typingEffect = setInterval(function() {
+            if (i < text.length) {
+                storyText.innerText += text.charAt(i);
+                i++;
+            } else {
+                clearInterval(typingEffect);
+            }
+        }, 50); // 타이핑 효과 속도 조절 (밀리초 단위)
+    }
+</script>
+
+</body>
+</html>

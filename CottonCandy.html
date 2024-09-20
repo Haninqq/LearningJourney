@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onri's Cotton Candy Planet Story</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        .popup-container {
+            width: 80%;
+            max-width: 800px;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .popup-container img {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+
+        .story-text {
+            display: none;
+            margin-top: 20px;
+            text-align: left;
+            font-size: 18px;
+            line-height: 1.5;
+            white-space: pre-wrap;
+        }
+
+        .show-text-button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        .show-text-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="popup-container">
+    <img src="https://i.postimg.cc/dVzkHk1Q/DALL-E-2024-09-20-10-07-18-A-cute-rabbit-astronaut-named-Onri-who-is-also-a-baker-exploring-th.webp">
+    <button class="show-text-button" id="show-text-button" onclick="showStory()">스토리 보기</button>
+    <div class="story-text" id="story-text">
+        솜사탕 행성에 도착해 이곳 저곳 탐험한 온리는 폭신폭신한 솜사탕을 얻습니다. 솜사탕이라면 더 부드러운 쿠키를 만들 수 있을지 몰라. 하지만 아직 뭔가 부족해! 온리는 또다른 재료를 찾기 위해 다른 행성으로 떠나기로 결정합니다. 다음 행성은 과연 어디일까요?
+    </div>
+</div>
+
+<script>
+    function showStory() {
+        const storyText = document.getElementById('story-text');
+        const text = storyText.innerText;
+        const button = document.getElementById('show-text-button');
+        storyText.innerText = '';
+        storyText.style.display = 'block';
+        button.style.display = 'none'; // 버튼 숨기기
+        
+        let i = 0;
+        const typingEffect = setInterval(function() {
+            if (i < text.length) {
+                storyText.innerText += text.charAt(i);
+                i++;
+            } else {
+                clearInterval(typingEffect);
+            }
+        }, 50); // 타이핑 효과 속도 조절 (밀리초 단위)
+    }
+</script>
+
+</body>
+</html>
